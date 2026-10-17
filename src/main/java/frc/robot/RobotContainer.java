@@ -133,8 +133,8 @@ public class RobotContainer {
     drive.setDefaultCommand(
         DriveCommands.joystickDrive(
             drive,
-            () -> controller.getLeftY(), // TODO: removed - sign for short term
-            () -> controller.getLeftX(), // Above todo
+            () -> -controller.getLeftY(),
+            () -> -controller.getLeftX(),
             () -> -controller.getRightX()));
 
     // Lock to 0° when A button is held
@@ -143,8 +143,8 @@ public class RobotContainer {
         .whileTrue(
             DriveCommands.joystickDriveAtAngle(
                 drive,
-                () -> controller.getLeftY(), // Above todo
-                () -> controller.getLeftX(), // Above todo
+                () -> -controller.getLeftY(),
+                () -> -controller.getLeftX(),
                 () -> Rotation2d.kZero));
 
     // Switch to X pattern when X button is pressed
