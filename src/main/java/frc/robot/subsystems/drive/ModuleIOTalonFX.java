@@ -261,4 +261,14 @@ public class ModuleIOTalonFX implements ModuleIO {
               rotation.getRotations());
         });
   }
+
+  @Override
+  public double getCurrentDrawDrive() {
+    return driveTalon.getStatorCurrent().getValueAsDouble();
+  }
+
+  @Override
+  public double getCurrentDrawSteer() {
+    return turnTalon.getStatorCurrent().getValueAsDouble();
+  }
 }
