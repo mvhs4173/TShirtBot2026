@@ -138,4 +138,12 @@ public class Module {
   public double getFFCharacterizationVelocity() {
     return Units.radiansToRotations(inputs.driveVelocityRadPerSec);
   }
+
+  public double getCurrentDrawDrive() {
+    return io.getCurrentDrawDrive();
+  }
+
+  public double getCurrentDrawSteer() {
+    return io.getCurrentDrawSteer();
+  }
 }

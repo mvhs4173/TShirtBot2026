@@ -46,4 +46,12 @@ public interface ModuleIO {
 
   /** Run the turn motor to the specified rotation. */
   public default void setTurnPosition(Rotation2d rotation) {}
+
+  public default double getCurrentDrawDrive() {
+    return 0.0;
+  }
+
+  public default double getCurrentDrawSteer() {
+    return 0.0;
+  }
 }

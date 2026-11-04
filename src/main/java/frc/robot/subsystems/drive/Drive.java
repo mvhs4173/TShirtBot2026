@@ -152,13 +152,27 @@ public class Drive extends SubsystemBase {
 
   @Override
   public void periodic() {
+<<<<<<< HEAD
     SmartDashboard.putNumber("Front Left Angle", modules[0].getAngle().getDegrees());
     SmartDashboard.putNumber("Front Right Angle", modules[0].getAngle().getDegrees());
     SmartDashboard.putNumber("Back Left Angle", modules[0].getAngle().getDegrees());
     SmartDashboard.putNumber("Back Right Angle", modules[0].getAngle().getDegrees());
+=======
+
+    SmartDashboard.putNumber("Drive Front Left Current", modules[0].getCurrentDrawDrive());
+    SmartDashboard.putNumber("Drive Front Right Current", modules[1].getCurrentDrawDrive());
+    SmartDashboard.putNumber("Drive Back Left Current", modules[2].getCurrentDrawDrive());
+    SmartDashboard.putNumber("Drive Back Right Current", modules[3].getCurrentDrawDrive());
+
+    SmartDashboard.putNumber("Steer Front Left Current", modules[0].getCurrentDrawSteer());
+    SmartDashboard.putNumber("Steer Front Right Current", modules[1].getCurrentDrawSteer());
+    SmartDashboard.putNumber("Steer Back Left Current", modules[2].getCurrentDrawSteer());
+    SmartDashboard.putNumber("Steer Back Right Current", modules[3].getCurrentDrawSteer());
+>>>>>>> 360ffd0acb76d85376f218311ec4462d834bc1f2
 
     odometryLock.lock(); // Prevents odometry updates while reading data
     gyroIO.updateInputs(gyroInputs);
+    SmartDashboard.putNumber("Gyro yaw deg", getRotation().getDegrees());
     Logger.processInputs("Drive/Gyro", gyroInputs);
     for (var module : modules) {
       module.periodic();
